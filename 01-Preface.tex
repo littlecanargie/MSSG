@@ -1,0 +1,51 @@
+\chapter{前言}
+
+\section{本書緣起}
+做為一位從醫界半路出家的生物統計學家，除了常常接受統計諮詢外，最常被問的就是「有沒有什麼推薦的統計書？」。敝人翻譯的\href{https://hochitw.com/index_down.php?ISPID=12350&sele=shopbig_dm_down}{「簡明生物統計學」第三版}，但其，在這個統計方法多元化的現在似乎稍嫌不足。
+
+也希望自己能在寫這本書的過程中，重整自己流行病學與統計知識的。
+
+\subsection{什麼人適合本書}
+\begin{itemize}
+    \item 剛開始接觸生醫統計的學生/研究生
+    \item 對生醫統計沒有概念，但職場需要用到生醫統計的從業人員
+    \item 學過一些生醫統計，想重新打基礎的各類人士
+\end{itemize}
+
+\subsection{什麼人不適合本書}
+\begin{itemize}
+    \item 想要練習很多考題、做很多查表計算的考生
+    \item 想查詢某模型在某軟體的程式碼怎麼寫
+    \item 想快速知道怎麼讓 $p$ 值變顯著
+    \item 想鑽研機率統計的硬核（hardcore）數學理論
+\end{itemize}
+
+\section{如何使用本書}
+
+數學是讓許多人聞之色變的科目。不幸地是，數學也是統計的基礎，所以談到統計必定離不開數學。一位好的統計學家必須熟知統計的數學細節，但一位好的資料分析人員關心的是要用什麼模型、為什麼要用該模型、如何設定模型參數、以及如何正確解讀估計結果並做出決策。為了適配各種不同讀者的需求，本書將非必要的補充內容寫進灰色的補充專欄，供有需要的讀者參考，舉例如下：
+
+\begin{bonus}{補充舉例}{BonusEx}
+    \begin{align*}
+    I &= \int_{-\infty}^{\infty} e^{-\frac{x^2}{2}} dx \ge 0 \quad\quad 
+         (\because \forall x \in \mathbb{R},  e^{-\frac{x^2}{2}} \ge 0)\\\\
+    %
+    I^2 &= \left[ \int_{-\infty}^{\infty} e^{-\frac{x^2}{2}} dx \right]
+           \left[ \int_{-\infty}^{\infty} e^{-\frac{y^2}{2}} dy \right]\\
+    %
+    &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-\frac{x^2+y^2}{2}} dx dy \quad\quad
+       \left( x = r \cos \theta, y = r \sin \theta; 
+       r \in [0, \infty), \theta \in [0, 2\pi) \right)\\
+    %
+    &= \int_{0}^{2\pi} \int_{0}^{\infty} e^{-\frac{r^2}{2}} r dr d\theta
+      =\int_{0}^{2\pi} \left. -e^{-\frac{r^2}{2}} \right|_{0}^{\infty} d\theta 
+      =\int_{0}^{2\pi} 1 d\theta = 2\pi\\\\
+    %
+    \Rightarrow I &= \sqrt{2\pi}
+    \end{align*}
+\end{bonus}
+
+如果你對數學細節沒有興趣，可以直接跳過這些專欄，不會影響對內文的理解（但你只能「相信」推導結果是正確的）。如果你是修習統計課的學生，或是未來想要繼續研讀統計方法學，那我建議你至少把這些數學細節看過一遍。
+
+本書的實作均使用免費開源的 R 軟體執行。程式碼均會上傳到我的 \href{http://mcshih.com}{個人網站}。有興趣實作的讀者可以自行下載 R 軟體搭配使用。
+
+\section{閱讀本書前的先備數學知識}
