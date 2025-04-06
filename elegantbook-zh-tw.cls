@@ -312,7 +312,17 @@
 \graphicspath{{./figure/}{./figures/}{./image/}{./images/}{./graphics/}{./graphic/}{./pictures/}{./picture/}}
 
 \RequirePackage{tikz}
-\usetikzlibrary{backgrounds,calc,shadows}
+\usetikzlibrary{backgrounds,calc,shadows,shapes.geometric, arrows}
+
+\tikzstyle{rnd} = [rectangle, rounded corners, 
+minimum width=3cm, 
+minimum height=1cm,
+text centered, 
+draw=black
+]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
 \usepackage[object=vectorian]{pgfornament} %% 
 
 \newcommand*{\eitemi}{\tikz \draw [baseline, ball color=structurecolor,draw=none] circle (2pt);}
@@ -648,6 +658,11 @@
 \newenvironment{custom}[1]{\par\noindent\textbf{\color{third}
 	\ifdefstring{\ELEGANT@lang}{en}{#1}{#1}\,
 }}{\par}
+\newenvironment{docexam}[1]{\bigskip
+
+        \par\noindent\textbf{\color{third}
+	\ifdefstring{\ELEGANT@lang}{en}{國考題 #1}{國考題 #1}\,
+}}{\par}
 
 \RequirePackage{multicol}
 \tcbset{
@@ -676,6 +691,13 @@
 }{%
 \end{itemize}
 \end{multicols}
+\end{tcolorbox}}
+
+\newenvironment{takehome}[1][\ifdefstring{\ELEGANT@lang}{en}{Take home message}{本章重點}]{
+\begin{tcolorbox}[introduction,title={#1}]
+\begin{itemize}[label=\textcolor{structurecolor}{\scriptsize\SquareShadowBottomRight}]
+}{%
+\end{itemize}
 \end{tcolorbox}}
 
 \RequirePackage{adforn}
@@ -845,3 +867,7 @@
 \newcommand\bmmax{0}
 \RequirePackage{bm}
 
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\NN}{\mathcal{N}}
+\newcommand{\ZZ}{\mathcal{Z}}
